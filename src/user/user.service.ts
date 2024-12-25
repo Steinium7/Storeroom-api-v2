@@ -12,6 +12,10 @@ export class UserService {
     return `This action returns all user`;
   }
 
+  findByUsername(username: string) {
+    return { username: 'admin', password: 'admin' };
+  }
+
   findOne(id: number) {
     return `This action returns a #${id} user`;
   }

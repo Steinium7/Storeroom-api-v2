@@ -6,6 +6,7 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { CompanyModule } from './company/company.module';
 import { UserModule } from './user/user.module';
 import { PeopleModule } from './people/people.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { PeopleModule } from './people/people.module';
     CompanyModule,
     UserModule,
     PeopleModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
