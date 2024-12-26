@@ -5,6 +5,7 @@ import {
   Post,
   HttpStatus,
   BadRequestException,
+  UnauthorizedException,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { CreateUserDto } from 'src/user/dto/create-user.dto';
@@ -16,16 +17,16 @@ export class AuthController {
   @HttpCode(HttpStatus.OK)
   @Post('login')
   async signIn(@Body() signInDto: any) {
-    let user = await this.authService.signIn(
+    let result = await this.authService.signIn(
       signInDto.username,
       signInDto.password,
     );
 
-    if (!user) {
-      throw new BadRequestException('Invalid credentials');
+    if (!result) {
+      throw new UnauthorizedException('Invalid credentials');
     }
 
-    return user;
+    return result;
   }
 
   @HttpCode(HttpStatus.CREATED)
