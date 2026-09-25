@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { User } from 'src/models/user.model';
-import { Company } from 'src/models/company.model';
+import { User } from '../models/user.model';
+import { Company } from '../models/company.model';
 import { randomInt } from 'crypto';
 
 @Injectable()
