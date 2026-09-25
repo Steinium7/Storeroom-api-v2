@@ -42,6 +42,10 @@ export class AuthService {
       return null;
     }
 
-    return await this.userService.create(signUpDto);
+    user = await this.userService.create(signUpDto);
+
+    const { password, ...result } = user;
+
+    return result;
   }
 }
